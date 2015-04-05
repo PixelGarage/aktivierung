@@ -1,0 +1,232 @@
+/*
+ * responsive.custom.css is for custom media queries that are not set via the
+ * theme settings, such as cascading media queries.
+ *
+ * By default all the other responsive stylesheets used in Adaptivetheme use a
+ * "stacking method", however cascading media queries use a waterfall method so
+ * you can leverage the cascade and inheritance for all browsers that support
+ * media queries, regardless of screen size.
+ *
+ * @SEE http://zomigi.com/blog/essential-considerations-for-crafting-quality-media-queries/#mq-overlap-stack
+ *
+ * NOTE: this file loads by default, to disable got to your theme settings and
+ * look under the "CSS" settings tab.
+ */
+/*
+ * Tablets sizes and up
+ */
+@media only screen and (min-width: 30.0675em) { /*  > 480 px */
+
+    /* Kommunikation node margin adaptation when columns get stacked */
+    .page-node .node-page-text-image > .at-panel > .region-two-33-66-first > .region-inner,
+    .page-node .node-referenz > .at-panel > .region-two-33-66-first > .region-inner,
+    .page-node .node-page-netzwerk .at-panel > .region-two-66-33-first > .region-inner,
+    .page-architektur .node-arch-referenz .at-panel > .region-two-33-66-first .region-inner {
+        margin-right: 0.5em;
+    }
+
+}
+
+@media only screen and (min-width: 32.5em) { /*  >= 520 px */
+    /*
+     *  Page Aktivierung item size
+     */
+    .page-aktivierung .isotope .grid-sizer,
+    .page-aktivierung .isotope .isotope-item {
+        width: 9.9em;
+    }
+    .page-aktivierung .isotope .isotope-item {
+        height: 9.9em;
+        margin-right: 0.5em;
+        margin-bottom: 0.5em;
+    }
+    .page-aktivierung .isotope .isotope-item article .field-name-field-link a {
+        padding-top: 4em;
+    }
+
+}
+
+/*
+ * Tablet sizes and down
+ */
+@media only screen and (min-width: 40.0625em) { /* > 640px */
+
+    /* =============================================================================
+     *   Title and Breadcrumb
+     * ========================================================================== */
+    #name-and-slogan {
+        font-size: 1.5em;
+    }
+
+    #breadcrumb li,
+    #breadcrumb .crumb-sepreator:before {
+        font-size: 1.0em;
+    }
+
+    /* =============================================================================
+    *   Page text-image padding
+    * ========================================================================== */
+    article#node-80 .at-panel > .region > .region-inner,
+    .node-page-text-image .at-panel > .region-two-33-66-first > .region-inner {
+        padding: 2em;
+    }
+
+
+    /* =============================================================================
+     *   Superfish nav-bar menu
+     * ========================================================================== */
+    /*
+     * Menu bar wrapper
+     */
+    #menu-bar > nav.menu-bar-wrapper {
+        margin: 0 0.625em 3em;
+        white-space: nowrap;
+    }
+
+    #superfish-1,
+    #superfish-1 > li > ul {
+        float: left; /* float parent container to prevent collapsing of it */
+        margin: 0;
+        padding: 0 0 0.5em;
+        width: 100%;
+        color: #222222;
+        border-bottom: 1px dashed #222222;
+    }
+
+    #superfish-1 li {
+        /* all list items */
+        float:left;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        background-color: rgba(255,255,255,0.8);
+    }
+    #superfish-1 li a,
+    #superfish-1 li a:link,
+    #superfish-1 li a:visited {
+        /* all link items */
+        display: block;
+        white-space: nowrap;
+        padding-right: 20px;
+        font-size: 1em;
+        line-height: 1.6;
+        color: #222222;
+        text-decoration: none;
+    }
+    #superfish-1 li a:hover,
+    #superfish-1 li a:focus {
+        color: #222222;
+    }
+    /* no drop-down arrow */
+    #superfish-1 a > .sf-sub-indicator {
+        display: none;
+    }
+
+    #superfish-1 li.sf-depth-2 > ul {
+        /* shadow for dropdowns */
+        box-shadow: 2px 2px 5px #888888;
+    }
+
+
+    /* =============================================================================
+     *   Superfish menu icons
+     * ========================================================================== */
+    /*
+     * Aktivierung main menu
+     */
+    #superfish-1 li.sf-depth-1 a.menu-main,
+    #superfish-1 li.sf-depth-1 a.menu-main:visited {
+        background: url('images/circle_gray.png') no-repeat left center;
+        background-size: 0.5em;
+        text-indent: 1em;
+        color: #222222;
+    }
+    #superfish-1 li.sf-depth-1 a.menu-main:active,
+    #superfish-1 li.sf-depth-1 a.menu-main.active,
+    #superfish-1 li.sf-depth-1.active-trail a.menu-main,
+    #superfish-1 li.sf-depth-1 a.menu-main:hover {
+        background: url('images/circle_black.png') no-repeat left center;
+        background-size: 0.75em;
+        text-indent: 1em;
+        color: #222222;
+    }
+    /* Kommunikation second / third level */
+    #superfish-1 li.sf-depth-2 a.menu-comm,
+    #superfish-1 li.sf-depth-3 .view a.menu-comm {
+        /* sub-menus of menu-comm-main */
+        background: url('images/circle_black.png') no-repeat left center;
+        background-size: 0.5em;
+        text-indent: 0.8em;
+        color: #222222;
+    }
+    #superfish-1 li.sf-depth-2 a.menu-comm:hover,
+    #superfish-1 li.sf-depth-3 .view a.menu-comm:hover,
+    #superfish-1 li.sf-depth-2.active-trail > a.menu-comm,
+    #superfish-1 li.sf-depth-2 > a.menu-service.active, /* korrigiert Fehler in active-trail*/
+    #superfish-1 li.sf-depth-3.active-trail > a.menu-comm.active {
+        /* sub-menus of menu-comm-main */
+        background: url('images/circle.png') no-repeat left center;
+        background-size: 0.5em;
+        text-indent: 0.8em;
+        color: #222222;
+    }
+
+
+    /*
+     * Kontakt main menu
+     */
+    #superfish-1 > li#menu-690-1 {
+        /* Contact menu */
+        float: right;
+        top: 0;
+        max-width: 4.5em;
+    }
+    #superfish-1 li.sf-depth-1 a#menu-contact-main,
+    #superfish-1 li.sf-depth-1 a#menu-contact-main:visited,
+    #superfish-1 li.sf-depth-1 a#menu-contact-main:hover,
+    #superfish-1 li.sf-depth-1 a#menu-contact-main:active,
+    #superfish-1 li.sf-depth-1 a#menu-contact-main.active {
+        color: #222222;
+    }
+    #superfish-1 li.sf-depth-1 a#menu-contact-main:before {
+        font-family: FontAwesome;
+        content: "\f095";
+        display: inline-block;
+        padding-right: 0.25em;
+        color: rgba(185,185,185,1.0);
+        font-size: 1em;
+    }
+    #superfish-1 li.sf-depth-1 a#menu-contact-main:hover:before,
+    #superfish-1 li.sf-depth-1 a#menu-contact-main:active:before,
+    #superfish-1 li.sf-depth-1 a#menu-contact-main.active:before {
+        font-family: FontAwesome;
+        content: "\f095";
+        display: inline-block;
+        padding-right: 0.25em;
+        font-size: 1em;
+        color: #222;
+    }
+
+
+}
+
+@media only screen and (min-width: 42.875em) { /*  >= 686 px */
+    /* grid layout 3->4 */
+    .page-aktivierung .isotope .isotope-item.visible-1 {
+        display: inline-block;
+    }
+}
+
+@media only screen and (min-width: 53.25em) { /*  >= 852 px */
+    /* grid layout 4->5 */
+    .page-aktivierung .isotope .isotope-item.visible-2 {
+        display: inline-block;
+    }
+}
+
+@media only screen and (min-width: 63.6875em) { /*  >= 1019 px */
+    /* grid layout 5->6 */
+    .page-aktivierung .isotope .isotope-item.visible-3 {
+        display: inline-block;
+    }
+}

@@ -1,0 +1,12 @@
+Specific Project Details:
+
+Changes in Modules
+==================
+
+
+Modules
+=======
+- Superfish nicht updaten
+- Adaptive Theme 3.1 nicht updaten
+
+Sonst alle Module ok.
